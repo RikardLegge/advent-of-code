@@ -4,16 +4,17 @@ module Day2
     ) where
 
 import Control.Monad
+import Lib
 
 run1 :: String -> IO ()
 run1 input = print (head (run 0 list))
   where
-    list = set (set (map read (split input)) 1 12) 2 2
+    list = set (set (map read (split input  ',')) 1 12) 2 2
 
 run2 :: String -> IO ()
 run2 input = print (show noun ++ "*100+" ++ show verb ++ " = " ++ show (100 * noun + verb))
   where
-    list = map read (split input)
+    list = map read (split input ',')
     (noun, verb, res) = findReplace 0 0 list
 
 findReplace :: Int -> Int -> [Int] -> (Int, Int, [Int])
@@ -54,11 +55,3 @@ set :: [Int] -> Int -> Int -> [Int]
 set list offset val = start ++ val : end
   where
     (start, _:end) = splitAt offset list
-
-split :: String -> [String]
-split [] = [""]
-split (c:cs)
-  | c == ','  = "" : rest
-  | otherwise = (c : head rest) : tail rest
-  where
-    rest = split cs

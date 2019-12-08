@@ -4,6 +4,7 @@ import System.IO
 import Control.Monad
 import Day1
 import Day2
+import Day3
 import System.Environment (getArgs)
 
 main :: IO ()
@@ -22,3 +23,6 @@ run day contents
   | day == 2 = do
     Day2.run1 contents
     Day2.run2 contents
+  | day == 3 = do
+    Day3.run1 contents
+    Day3.run2 contents
