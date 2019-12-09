@@ -1,0 +1,51 @@
+body {
+    width: 100%;
+    height: 100%;
+    padding:0;
+    margin: 0;
+    background-image: url("./background.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: monospace;
+    color: white;
+}
+
+
+.days {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.day {
+    margin: 5px;
+    text-align: center;
+    width: 1em;
+    height: 1em;
+    padding: 15px;
+    border: 1px solid #eeeeee;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: white;
+}
+
+.page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.content {
+}
+
+.title {
+    font-size: 3em;
+}
+
+.results {
+}
+
+.result {
+    font-size: 2em;
+}
